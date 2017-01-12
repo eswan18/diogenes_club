@@ -1,0 +1,14 @@
+h1.page_title {
+  color: red;
+  text-align: center;
+}
+
+/* Content Table */
+table.content_table {
+  width: 100%;
+}
+table.content_table td {
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+}
