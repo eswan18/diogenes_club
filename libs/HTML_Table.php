@@ -23,6 +23,7 @@
 			$this->ncol = lib\lcm_array($cols);
 			$this->nrow = count($cols);
 
+			// Initialize the content
 			for ($i = 0; $i < $this->nrow; $i++) {
 				// Calculate how wide each cell should be in the current column
 				$cell_width = $this->ncol / $cols[$i];
@@ -45,10 +46,30 @@
 
 		//print the html table
 		function output() {
-			//TODO
-			//Return the table in HTML format
-			//Remember to include HTML attributes
-			return NULL;
+			// Create an HTML-ready string of attributes
+			// for the table tag
+			$attr_string = "";
+			foreach($this->attrs as $key => $value) {
+				$attr_string .= "$key='$value'";
+			}
+			//Print the table itself
+			$html = "<table $attr_string>";
+			for($i = 0; $i < $this->nrow; $i++) {
+				$row_html = "<tr>";
+				// Calculate how wide each cell should be in the current column
+				$cell_width = $this->ncol / count($this->content[$i]);
+				// Print each "column"
+				for ($j = 0; $j < count($this->content[$i]); $j++) {
+					$cell_html = "<td colspan='$cell_width'>";
+					$cell_html .= $this->content[$i][$j];
+					$cell_html .= "</td>";
+					$row_html .= $cell_html;
+				}
+				$row_html .= "</tr>";
+				$html .= $row_html;
+			}
+			$html .= "</table>";
+			return $html;
 		}
 	}
 ?>

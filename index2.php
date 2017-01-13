@@ -17,7 +17,6 @@
 
     <?php
       //create a table with 5 rows, with 3,3,3,2,and1 cols respectively
-      #$content_table = bsb\make_table(array("class" => content_table), cols = (3, 3, 3, 2, 1));
       $content_table = new bsb\HTML_Table([3, 3, 3, 2, 1], array("class" => content_table));
       // Row 0
       $content_table->set_html(0, 2, 'Settings and Login Icons');
@@ -30,9 +29,10 @@
       $content_table->set_html(3, 1, 'Recently Perused');
       // Row 4
       $content_table->set_html(4, 0, 'Categories');
-      
+
+
       //set up the table's contents
-      #echo $content_table->output();
+      echo $content_table->output();
     ?>
 
   </body>
