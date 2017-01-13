@@ -1,37 +1,54 @@
 <?php
 	namespace Baker_Street_Boys;
+	require_once('libs/General_Lib.php');
+	use General_Lib as lib;
 
 	//Custom html table template for formatting purposes
 	class HTML_Table {
-
-
-		// $cols - List array. Each element is an int representing the
-		// number of columns that should be present in that row
-		public $cols;
 		// $attrs - Associate array. Each key-value pair will
 		// be assigned as a attribute-value pair in the <table> tag
 		public $attrs;
+		// $ncol - total number of columns in the real HTML table
+		// (as opposed to the representation)
+		public $ncol;
+		// $content - the html table cells
+		public $content;
 		
 		//Constructor	
 		function __construct($cols, $attrs) {
-			$this->$cols = $cols;
-			$this->$attrs = $attrs;
-			// TODO
+			$this->attrs = $attrs;
 			// Set up the table to have ncols =
 			// least_common_denom of the values
 			// in $cols
+			$this->ncol = lib\lcm_array($cols);
+			$this->nrow = count($cols);
+
+			for ($i = 0; $i < $this->nrow; $i++) {
+				// Calculate how wide each cell should be in the current column
+				$cell_width = $this->ncol / $cols[$i];
+				// Create each "column"
+				for ($j = 0; $j < $cols[$i]; $j++) {
+					$this->content[$i][$j] = "";
+				}
+			}
 		}
 
 		//Set the HTML of a table cell
 		function set_html($x, $y, $html) {
-			// TODO
-			// Set the html of the requested cell
+			$this->content[$x][$y] = $html;
 		}
 
+		//Get the html of a requested cell
 		function get_html($x, $y) {
-			// TODO
-			// Get the html of the requested cell
-			return $html;
+			return $this->content[$x][$y];
+		}
+
+		//print the html table
+		function output() {
+			//TODO
+			//Return the table in HTML format
+			//Remember to include HTML attributes
+			return NULL;
 		}
 	}
 ?>
