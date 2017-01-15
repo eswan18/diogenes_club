@@ -23,7 +23,7 @@
       // Row 1
       $content_table->set_html(1, 1, "<h1 class='page_title'>The Diogenes Club</h1>");
       // Row 2
-      $content_table->set_html(2, 1, 'Search bar');
+      $content_table->set_html(2, 1, '<form method="get" action="search.php"><span class="search"><input class="search" type="text" name="search" placeholder="Search..."></span></form>');
       // Row 3
       $content_table->set_html(3, 0, 'Hot Topics');
       $content_table->set_html(3, 1, 'Recently Perused');
