@@ -7,6 +7,8 @@ h1.page_title {
 table.content_table {
   width: 100%;
   table-layout: fixed;
+  background-color: #FFAA00;
+  padding: 1% 5%;
 }
 table.content_table td {
   border-width: 1px;
@@ -14,20 +16,24 @@ table.content_table td {
   border-color: black;
   padding: 0;
 }
-div.cell_content {
-  height: 100%;
-  width: 100%;
-  background-color: pink;
-  display: table;
+div.content_bubble {
+  background-color: white;
+  border-radius: 2em;
+  border-width: 1px;
+  border-style: solid;
+  border-color: black;
+  margin: 20px;
+  text-align: center;
 }
 form.search {
   background-color: orange;
-  /*width: 100%;
-  display: table-cell;*/
 }
 input.search {
   width: 100%;
   border-radius: 2em;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
   font-size: 1em;
   padding-left: 15px;
   display: table-cell;

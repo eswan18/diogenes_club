@@ -17,16 +17,22 @@
 
     <?php
       //create a table with 5 rows, with 3,3,3,2,and1 cols respectively
-      $content_table = new bsb\HTML_Table([3, 3, 3, 2, 1], array("class" => content_table));
+      $content_table = new bsb\HTML_Table([3, 1, 3, 2, 1], array("class" => content_table));
       // Row 0
       $content_table->set_html(0, 2, 'Settings and Login Icons');
       // Row 1
-      $content_table->set_html(1, 1, "<h1 class='page_title'>The Diogenes Club</h1>");
+      $content_table->set_html(1, 0, "<h1 class='page_title'>The Diogenes Club</h1>");
       // Row 2
       $content_table->set_html(2, 1, '<form method="get" action="search.php"><span class="search"><input class="search" type="text" name="search" placeholder="Search..."></span></form>');
       // Row 3
-      $content_table->set_html(3, 0, 'Hot Topics');
-      $content_table->set_html(3, 1, 'Recently Perused');
+      $content_table->set_html(3, 0, '<div class="content_bubble" id="hot_topics">
+		<h2>Hot Topics</h2>
+		<br><br><br><br><br>
+		</div>');
+      $content_table->set_html(3, 1, '<div class="content_bubble" id="recently_perused">
+		<h2>Recently Perused</h2>
+		<br><br><br><br><br>
+		</div>');
       // Row 4
       $content_table->set_html(4, 0, 'Categories');
 
