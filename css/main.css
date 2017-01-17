@@ -59,6 +59,9 @@ div.spacer {
 div#index_spacer_under_search {
   height: 2em;
 }
+div#index_spacer_under_bubbles {
+  height: 1em;
+}
 
 /******************
  * Random Elements

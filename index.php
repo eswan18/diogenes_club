@@ -16,8 +16,8 @@
   <body>
 
     <?php
-      //create a table with 5 rows, with 3,3,3,2,and1 cols respectively
-      $content_table = new bsb\HTML_Table([3, 1, 3, 1, 2, 1], array("class" => content_table));
+      //create a table with 7 rows
+      $content_table = new bsb\HTML_Table([3, 1, 3, 1, 2, 1, 1], array("class" => content_table));
       
       $row = 0;
       $content_table->set_html($row, 2, '<img id="settings_icon" src="assets/images/settings_icon.png">
@@ -43,7 +43,13 @@
 		</div>');
       
       $row = 5;
-      $content_table->set_html($row, 0, 'Categories');
+      $content_table->set_html($row, 0, '<div class="spacer" id="index_spacer_under_bubbles"/>');
+
+      $row = 6;
+      $content_table->set_html($row, 0, '<div class="content_bubble" id="all_categories">
+		<h2>All Categories</h2>
+		<br><br><br><br><br>
+		</div>');
 
       //output the table's contents
       echo $content_table->output();
