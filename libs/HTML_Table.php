@@ -2,6 +2,7 @@
 	namespace Baker_Street_Boys;
 	require_once('libs/General_Lib.php');
 	use General_Lib as lib;
+	use Exception;
 
 	//Custom html table template for formatting purposes
 	class HTML_Table {
@@ -36,7 +37,12 @@
 
 		//Set the HTML of a table cell
 		function set_html($x, $y, $html) {
-			$this->content[$x][$y] = $html;
+			if (isset($this->content[$x][$y])) {
+				$this->content[$x][$y] = $html;
+			}
+			else {
+				throw new \Exception('Attempt to set HTML_Table cell that does not exist');
+			}
 		}
 
 		//Get the html of a requested cell
