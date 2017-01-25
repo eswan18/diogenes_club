@@ -24,6 +24,7 @@ table.content_table td {
   border-color: black;
   border-style: solid;
   padding: 0;
+  vertical-align: top;
 }
 div.content_bubble {
   background-color: white;
