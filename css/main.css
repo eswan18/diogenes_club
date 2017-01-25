@@ -3,7 +3,7 @@ body {
 }
 
 h1.page_title {
-  color: red;
+  color: #FF6600;
   text-align: center;
   font-size: 3em;
   margin: .4em 0em;
@@ -88,4 +88,8 @@ div#user_label {
   width: 60%;
   font-size: 1.3em;
   float: left;
+}
+a.header {
+  text-decoration: none;
+  color: black;
 }
