@@ -1,5 +1,9 @@
 from flask import Flask, render_template
 app = Flask(__name__)
+import BakerStreetBoys as bsb
+
+# Load our mysql credentials
+mysql_cred = bsb.mysql.get_cred()
 
 @app.route('/')
 def home():
