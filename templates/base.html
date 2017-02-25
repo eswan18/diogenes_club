@@ -3,15 +3,13 @@
     <head>
         {% block head %}
         <script src='http://code.jquery.com/jquery-latest.min.js'></script>
-        <link rel='stylesheet' type='text/css' href='css/main.css'>
+        <link rel='stylesheet' type='text/css' href='/static/css/main.css'>
         <title>{% block title %} {% endblock %}</title>
         {% endblock %}
     </head>
 
     <body>
-        <div id="content">
-            {% block content %} {% endblock %}
-        </div>
+        {% block content %} {% endblock %}
     </body>
 </html>
 
