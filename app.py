@@ -11,4 +11,4 @@ def user():
 
 @app.route('/topic/<topic_name>/')
 def topic(topic_name=None):
-    return(render_template('topic.html', topic_name=topic_name))
+    return(render_template('topic.html', topic_name=topic_name.upper()))
