@@ -1,12 +1,11 @@
 <?php
+    echo "disaster strikes";
+	#namespace Baker_Street_Boys;
 
-	namespace Baker_Street_Boys;
+    # HTML Table
 	require_once('HTML_Table.php');
 
 	$bsb_flag = 1;
 
-	function hudson() {
-		echo "I'm not your housekeeper";
-	}
 
 ?>
