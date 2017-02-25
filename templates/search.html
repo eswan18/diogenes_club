@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %} Search - The Diogenes Club {% endblock %}
+{% block content %}
+
+{# CONTENT TABLE #}
+<table class='content_table'>
+    <tr>
+        <td colspan='2'>
+            <h2 class="site_name">
+                <a class="header" href="/">THE DIOGENES CLUB</a>
+            </h2>
+        </td>
+        <td colspan='2'></td>
+        <td colspan='2'>
+            <img id="settings_icon" src="/static/images/settings_icon.png">
+            <div id="user_label">USER</div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan='2'>
+            <form method="get" action="search.php">
+                <span class="search">
+                    <input class="search" type="text" name="search" placeholder="Search for a topic">
+                </span>
+            </form>
+        </td>
+        <td colspan='2'></td>
+        <td colspan='2'></td>
+    </tr>
+    <tr>
+        <td colspan='6'><h1 class='page_title'>Search Result for "{{ query }}"</h1></td>
+    </tr>
+    <tr>
+        <td colspan='6'>
+            <div class="spacer" id="index_spacer_under_search"/>
+        </td>
+    </tr>
+    <tr>
+        <td colspan='1'></td>
+        <td colspan='4'>
+            <div class='content_bubble' id='results'>
+                <h2>Results</h2>
+                <br><br><br><br><br>
+            </div>
+        </td>
+        <td colspan='1'></td>
+    </tr>
+</table>
+
+
+{% endblock %}
