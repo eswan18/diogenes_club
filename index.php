@@ -6,8 +6,8 @@
     <link rel='stylesheet' type='text/css' href='css/main.css'>
     <?php
       //Import framework and libraries
-      #require_once('libs/Baker_Street_Boys.php');
-      #use Baker_Street_Boys as bsb;
+      require_once('libs/Baker_Street_Boys.php');
+      use Baker_Street_Boys as bsb;
       #require_once('libs/General_Lib.php');
       #use General_Lib as lib;
     ?>
