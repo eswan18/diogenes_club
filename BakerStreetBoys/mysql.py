@@ -10,5 +10,4 @@ def get_cred():
         key = elements[0].strip()
         value = elements[1].strip()
         creds[key] = value
-    print(creds)
     return creds

@@ -40,7 +40,7 @@
         </td>
         <td colspan='3'>
             <div class="content_bubble" id="recently_perused">
-                <h2>Recently Perused</h2>
+                <h2>Recently Perused Topics</h2>
                 <br><br><br><br><br>
             </div>
         </td>
@@ -53,8 +53,10 @@
     <tr>
         <td colspan='6'>
             <div class="content_bubble" id="all_categories">
-                <h2>All Categories</h2>
-                <br><br><br><br><br>
+                <h2>All Topics</h2>
+                {% for topic in topics: %}
+                <button>{{ topic }}</button>
+                {% endfor %}
             </div>
         </td>
     </tr>

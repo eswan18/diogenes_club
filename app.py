@@ -19,10 +19,11 @@ mysql = flask_mysqldb.MySQL(app)
 @app.route('/')
 def home():
     cur = mysql.connection.cursor()
-    cur.execute('''SELECT * FROM users''')
-    rv = cur.fetchall()
-    print(str(rv))
-    return(flask.render_template('home.html'))
+    cur.execute('SELECT * FROM topics')
+    raw_topics = cur.fetchall()
+    topics = [x[1] for x in raw_topics]
+    return(flask.render_template('home.html',
+                                 topics = topics))
 
 @app.route('/user/')
 def user():
