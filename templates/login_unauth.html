@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %} Log In - The Diogenes Club {% endblock %}
+{% block content %}
+
+{# CONTENT TABLE #}
+<table class='content_table'>
+	<tr>
+        <td colspan='2'>
+            <h2 class="site_name">
+                <a class="header" href="/">THE DIOGENES CLUB</a>
+            </h2>
+        </td>
+		<td colspan='2'></td>
+		<td colspan='2'></td>
+	</tr>
+	<tr>
+		<td colspan='6'><h1 class='page_title'>Log In</h1></td>
+	</tr>
+	<tr>
+        <td colspan='2'></td>
+        <td colspan='2'>
+            <form method="post" action="/login/">
+                <input type="text" name="username" placeholder="username"><br>
+                <input type="text" name="password" placeholder="password"><br>
+                <input type='submit' value='Log In'>
+            </form>
+        </td>
+        <td colspan='2'></td>
+    </tr>
+</table>
+
+
+{% endblock %}

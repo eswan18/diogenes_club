@@ -9,7 +9,11 @@
 		<td colspan='2'></td>
 		<td colspan='2'>
 			<img id="settings_icon" src="/static/images/settings_icon.png">
-			<div id="user_label">USER</div>
+			<div id="user_label">
+                <form action='/login/' method='get'>
+                    <input type='submit' value='Log In'/>
+                </form>
+            </div>
 		</td>
 	</tr>
 	<tr>
@@ -18,7 +22,7 @@
 	<tr>
         <td colspan='2'></td>
         <td colspan='2'>
-            <form method="get" action="search.php">
+            <form method="get" action="/search/">
                 <span class="search">
                     <input class="search" type="text" name="search" placeholder="Search for a topic">
                 </span>
