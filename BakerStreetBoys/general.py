@@ -1,7 +1,7 @@
 import os
 
 def get_secret_key():
-    key_filename = "/home/ec2-user/.dc.keys"
+    key_filename = "/home/eswan18/.dc.keys"
     keys = {}
     for line in open(key_filename):
         elements = line.split(":")

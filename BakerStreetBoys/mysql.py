@@ -1,7 +1,7 @@
 import os
 
 def get_cred():
-    cred_filename = "/home/ec2-user/.mysql.credentials"
+    cred_filename = "/home/eswan18/.mysql.credentials"
     creds = {}
     for line in open(cred_filename):
         elements = line.split(":")
