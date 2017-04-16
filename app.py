@@ -22,6 +22,7 @@ def home():
     cur = mysql.connection.cursor()
     cur.execute('SELECT * FROM topics')
     raw_topics = cur.fetchall()
+    cur.close()
     topics = [x[1] for x in raw_topics]
     return(render_template('home.html',
                                  topics = topics))
@@ -47,13 +48,28 @@ def login():
             return('Bad request - you must send a uname and pw')
         username = request.form['username']
         password = request.form['password']
-        hashed_password = werkzeug.security.generate_password_hash(password)
-        print(username, password, hashed_password)
-        # Verify them against the database
         
-        # Then set the session username
-        session['username'] = request.form['username']
-        #session['user_id'] = user_id
+        # The next line will be used in user password creation:
+        #hashed_password = werkzeug.security.generate_password_hash(password)
+        ####################################
+        # Verify them against the database
+        ####################################
+        # First, get the hashed password from the database
+        cur = mysql.connection.cursor()
+        cur.execute('SELECT hashed_password FROM users WHERE username = \'' + username + '\'')
+        result = cur.fetchall()
+        cur.close()
+        # Check that we got a result (i.e. that the username exists)
+        if len(result) == 1:
+            # Check that the password checks out
+            hashed_password = str(result[0][0])
+            if werkzeug.security.check_password_hash(hashed_password, password):
+                # Then set the session username
+                session['username'] = request.form['username']
+                #session['user_id'] = user_id
+                return('success!')
+        return('authentiation probz')
+
     # If the user is already logged in
     return(render_template('login_unauth.html'))
     if ('username' in session):
